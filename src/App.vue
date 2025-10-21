@@ -46,7 +46,7 @@ const tableLabelInfo: string[] = tableLabels;
 
 onMounted(async () => {
   try {
-    const response = await fetch('/tradeups.json');
+    const response = await fetch(import.meta.env.BASE_URL + '/tradeups.json');
     const data = await response.json();
     tradeups.value = data;
     tradeupsQueried.value = tradeups.value;
