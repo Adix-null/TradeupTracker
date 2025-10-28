@@ -1,4 +1,7 @@
 # TradeupTracker
+
+live @ adix-null.github.io/tradeuptracker
+
 ## A tool to view CS2 computed tradeups based on the latest prices 
 
 Built with Vue 3 Composition + TypeScript + Vite + Deno 2
