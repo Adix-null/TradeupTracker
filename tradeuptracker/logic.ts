@@ -26,7 +26,7 @@ const priceUrl: URL = new URL(
 		"&sort_by=name&item_group=rifle,sniper+rifle,machinegun,pistol,smg,shotgun,equipment"
 );
 const pricePath: URL = new URL("./items.json", import.meta.url);
-const infoUrl: URL = new URL("https://bymykel.github.io/CSGO-API/api/en/skins.json");
+const infoUrl: URL = new URL("https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/skins.json");
 const infoPath: URL = new URL("./skins.json", import.meta.url);
 const tradeupPath: URL = new URL("../public/tradeups.json", import.meta.url);
 
@@ -52,18 +52,18 @@ async function processItems() {
 		console.log("Info read");
 
 		let GroupedInfo: any = groupItemsByCollection(skinsData);
-		console.log("Gruouped by collection info");
+		console.log("Grouped by collection info");
 		GroupedInfo = groupItemsByRarity(GroupedInfo)
 			.filter((collection) => collection.rarities.size > 1)
 			.sort((a, b) => a.collectionName.localeCompare(b.collectionName));
-		console.log("Gruouped by rarity info");
+		console.log("Grouped by rarity info");
 
 		let groupedPrices: any = groupPricesByCollection(priceData);
-		console.log("Gruouped by collection price");
+		console.log("Grouped by collection price");
 		groupedPrices = groupPricesByRarity(groupedPrices)
 			.filter((collection) => collection.rarities.size > 1)
 			.sort((a, b) => a.collectionName.localeCompare(b.collectionName));
-		console.log("Gruouped by rarity price");
+		console.log("Grouped by rarity price");
 
 		GroupedInfo = expandItemsByFloatRanges(GroupedInfo);
 		console.log("Expanded float");
