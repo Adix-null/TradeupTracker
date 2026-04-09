@@ -1,6 +1,8 @@
 # TradeupTracker
 
-live @ adix-null.github.io/tradeuptracker
+live @ adix-null.github.io/TradeupTracker
+
+(Covert tradeups are unsupported)
 
 ## A tool to view CS2 computed tradeups based on the latest prices 
 
